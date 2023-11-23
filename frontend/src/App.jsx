@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div>
-      <h1>User's IP Address:</h1>
+      <h1>Users IP Address:</h1>
       {ipAddress ? <p>{ipAddress}</p> : <p>Loading...</p>}
     </div>
   );
