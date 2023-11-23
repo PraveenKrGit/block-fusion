@@ -30,17 +30,25 @@ function getLocalIpAddress() {
   
     // Return a default value if no suitable IP address is found
     return '127.0.0.1';
-  }
 
-app.get('/record-ip', (req, res) => {
+}
+
+app.post('/record-ip', (req, res) => {
     const userIP = req.ip || req.socket.remoteAddress;
     console.log('User IP Address:', userIP);
-
-    // const userIP = getLocalIpAddress();
-    // console.log('User IP Address:', userIP);
     // Save the IP address or perform any other necessary actions
     res.status(200).json({ success: true, ipAddress: userIP });
   });
+
+// app.get('/record-ip', (req, res) => {
+//     const userIP = req.ip || req.socket.remoteAddress;
+//     console.log('User IP Address:', userIP);
+
+//     // const userIP = getLocalIpAddress();
+//     // console.log('User IP Address:', userIP);
+//     // Save the IP address or perform any other necessary actions
+//     res.status(200).json({ success: true, ipAddress: userIP });
+//   });
   
 
 app.listen(PORT, () => {
