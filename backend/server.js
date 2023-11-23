@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3005; 
+// const PORT = 3005; 
 const os = require('os');
 
 var cors = require('cors')
@@ -8,6 +8,10 @@ var cors = require('cors')
 
 app.use(express.json());
 app.use(cors())
+
+// Config
+const dotenv = require("dotenv");
+dotenv.config();
 
 
 function getLocalIpAddress() {
@@ -51,6 +55,6 @@ app.post('/record-ip', (req, res) => {
 //   });
   
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(4000 || process.env.PORT, () => {
+  console.log(`Server is running on ${process.env.PORT}`);
 });

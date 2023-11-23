@@ -6,7 +6,8 @@ function App() {
 
   useEffect(() => {
     // Fetch the user's IP address when the component mounts
-    axios.post('https://fusion-chain.onrender.com/record-ip')
+    // axios.post('https://fusion-chain.onrender.com/record-ip')
+    axios.post('http://localhost:4000/record-ip')
       .then(response => {
         setIpAddress(response.data.ipAddress);
         console.log(ipAddress);
